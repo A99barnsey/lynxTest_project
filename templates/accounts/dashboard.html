@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    {{user.username}}
+    {% if courses %}
+    <h1>These are the courses you have registered:</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Course Title</th>
+                <th scope="col">Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{course.name}}</td>
+                <td>{{course.description}}</td> 
+                <td>
+                    Insert Link to course
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>You do not have any courses yet.</p>
+    {% endif %}
+
+</body>
+
+</html>
